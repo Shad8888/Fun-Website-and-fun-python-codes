@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>suprise link generater</title>
+</head>
+<body>
+
+  <h1>Click me</h1>
+
+  <p>Click the button below to get a free suprise:</p>
+
+  <button onclick="generateRickrollLink()">Generate Rickroll Link</button>
+
+  <p id="rickrollLink"></p>
+
+  <script>
+    function generateRickrollLink() {
+      const rickrollLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+      document.getElementById('rickrollLink').innerHTML = `<a href="${rickrollLink}" target="_blank" rel="noopener noreferrer">${rickrollLink}</a>`;
+    }
+  </script>
+
+</body>
+</html>
+
