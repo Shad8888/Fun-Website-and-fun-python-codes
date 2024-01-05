@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adventure Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    h1 {
+      color: #333;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    #story {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Adventure Game</h1>
+  <p id="story">Welcome to the adventure! Click "Start" to begin.</p>
+
+  <button onclick="startGame()">Start</button>
+  <button onclick="makeChoice(1)">Choice 1</button>
+  <button onclick="makeChoice(2)">Choice 2</button>
+
+  <script>
+    let currentScene = 0;
+
+    const scenes = [
+      "You find yourself in a mysterious forest. Birds are chirping, and there are two paths ahead.",
+      "You follow the left path and discover a hidden treasure. Congratulations, you've won the game!",
+      "You follow the right path and encounter a dragon. Unfortunately, it's game over."
+    ];
+
+    function startGame() {
+      currentScene = 1;
+      updateStory();
+    }
+
+    function makeChoice(choice) {
+      if (currentScene === 1 && choice === 1) {
+        currentScene = 2;
+      } else if (currentScene === 1 && choice === 2) {
+        currentScene = 3;
+      }
+
+      updateStory();
+    }
+
+    function updateStory() {
+      const storyElement = document.getElementById('story');
+      storyElement.textContent = scenes[currentScene];
+    }
+  </script>
+
+</body>
+</html>
